@@ -23,6 +23,7 @@ gem "sass-rails", "~> 5.0"
 gem "simple_form"
 gem "title"
 gem "uglifier"
+gem "kaminari"
 
 group :development do
   gem "quiet_assets"

@@ -1,4 +1,4 @@
-FactoryGirl.define do  
+FactoryGirl.define do
   sequence :name do |n|
     "name #{n}"
   end
@@ -8,7 +8,7 @@ FactoryGirl.define do
   end
 
   factory :book do
-    name 
-    description 
+    name
+    description
   end
 end
