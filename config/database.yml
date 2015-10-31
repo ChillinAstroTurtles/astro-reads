@@ -6,6 +6,8 @@ development: &default
   min_messages: warning
   pool: <%= Integer(ENV.fetch("DB_POOL", 5)) %>
   reaping_frequency: <%= Integer(ENV.fetch("DB_REAPING_FREQUENCY", 10)) %>
+  username: postgres
+  password: astroreads
   timeout: 5000
 
 test:
