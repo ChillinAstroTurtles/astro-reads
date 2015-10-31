@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryGirl.define do  
   factory :author do
     birth_country "United States"
     gender "Female"
