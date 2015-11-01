@@ -9,7 +9,7 @@ feature "User" do
 
   scenario "sees they can but doesn't view additional records" do
     books = create_list(:book, 2)
- 
+
     visit books_url
 
     expect(page).to have_content(books.first.name)
