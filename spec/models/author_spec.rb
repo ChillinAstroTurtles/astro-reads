@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Author, type: :model do
   it { should respond_to(:birth_country) }
