@@ -7,4 +7,5 @@ RSpec.describe Author, type: :model do
   it { should respond_to(:author_biography) }
   it { should respond_to(:first_name) }
   it { should respond_to(:last_name) }
+  it { should have_many(:book_authors) }
 end
