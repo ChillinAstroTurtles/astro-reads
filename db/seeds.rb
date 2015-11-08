@@ -9,7 +9,7 @@
 Book.destroy_all
 Author.destroy_all
 
-fake_gender = ["Male", "Female"]
+fake_gender = %w("Male", "Female")
 
 (0..5).each do |i|
   author = Author.create(first_name: Faker::Name.first_name,
@@ -20,7 +20,9 @@ fake_gender = ["Male", "Female"]
                          twitter_username: "@" + Faker::Lorem.word,
                          author_biography: Faker::Lorem.sentence)
   (0..7).each do
-    book = author.books.create(name: Faker::Lorem.words(4).join(" "),
-                       description: Faker::Lorem.sentence)
+    author.books.create(name: Faker::Lorem.words(4).join(" "),
+                        description: Faker::Lorem.sentence,
+                        cover_image_url:
+                          Faker::Internet.url("s3.amazon.com"))
   end
 end

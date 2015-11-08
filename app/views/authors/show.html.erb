@@ -10,6 +10,7 @@
   <% @books.each do |book| %>
     <li>Book title: <%= book.name %></li>
     <li>Book description: <%= book.description %></li>
+    <li>Cover: <%= book.cover_image_url %></li>
     <li>***<li>
   <% end %>
 </ul>
