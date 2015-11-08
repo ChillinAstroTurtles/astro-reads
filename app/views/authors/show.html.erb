@@ -5,3 +5,11 @@
   <li>Website <%= @author.website %></li>
   <li>Bio <%= @author.author_biography %></li>
 </ul>
+
+<ul>
+  <% @books.each do |book| %>
+    <li>Book title: <%= book.name %></li>
+    <li>Book description: <%= book.description %></li>
+    <li>***<li>
+  <% end %>
+</ul>
