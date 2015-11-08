@@ -6,6 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Book.destroy_all
+Author.destroy_all
+
 fake_gender = ["Male", "Female"]
 
 (0..5).each do |i|
@@ -17,8 +20,7 @@ fake_gender = ["Male", "Female"]
                          twitter_username: "@" + Faker::Lorem.word,
                          author_biography: Faker::Lorem.sentence)
   (0..7).each do
-    book = Book.create(name: Faker::Lorem.words(4).join(" "),
+    book = author.books.create(name: Faker::Lorem.words(4).join(" "),
                        description: Faker::Lorem.sentence)
-    book.book_authors.create(author_id: author.id)
   end
 end
