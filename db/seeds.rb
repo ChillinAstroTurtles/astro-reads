@@ -9,7 +9,7 @@
 Book.destroy_all
 Author.destroy_all
 
-fake_gender = %w("Male", "Female")
+fake_gender = %w(Male Female)
 
 (0..5).each do |i|
   author = Author.create(first_name: Faker::Name.first_name,
