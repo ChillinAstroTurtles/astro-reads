@@ -1,11 +1,20 @@
 require "rails_helper"
 
+Kaminari.configure do |config|
+  config.default_per_page = 2
+end
+
 feature "Book" do
   describe "is filterable via categories" do
     scenario "is unfiltered" do
       category1 = create(:category, name: "Sci-Fi")
       category2 = create(:category, name: "Romance")
-      book      = create(:book, categories: [category1])
+      book1     = create(:book,
+                         name: "Ender's Game",
+                         categories: [category1])
+      book2     = create(:book,
+                         name: "Elanor and Park",
+                         categories: [category2])
 
       visit books_url
 
@@ -16,9 +25,14 @@ feature "Book" do
     scenario "is filtered" do
       category1 = create(:category, name: "Sci-Fi")
       category2 = create(:category, name: "Romance")
-      book      = create(:book, categories: [category1])
+      book1     = create(:book,
+                         name: "Ender's Game",
+                         categories: [category1])
+      book2     = create(:book,
+                         name: "Elanor and Park",
+                         categories: [category2])
 
-      visit books_url(:category => { :category_id => category1.id })
+      visit books_url(:category => category1.name)
 
       expect(page).to have_content(category1.name)
       expect(page).not_to have_content(category2.name)
