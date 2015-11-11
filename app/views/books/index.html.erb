@@ -1,6 +1,15 @@
 <ul>
   <% @books.each do |book| %>
-    <li><%= book.name %></li>
+    <li>
+      <h2><%= book.name %></h2>
+      <% if book.categories.any? %>
+        <ul>
+          <% book.categories.each do |category| %>
+            <li><%= category.name %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </li>
   <% end %>
 </ul>
 

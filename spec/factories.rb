@@ -18,7 +18,18 @@ FactoryGirl.define do
   end
 
   factory :book do
-    name
-    description
+    name "Ender's Game"
+    description "Orson Scott Card"
+
+    trait :book_with_category do
+      after(:create) do |book|
+        book.categories << create(:category)
+      end
+    end
+  end
+
+  factory :category do
+    name "Sci-Fi"
+    description "Science fiction, or 'Sci-Fi', is NOT fantasy."
   end
 end
