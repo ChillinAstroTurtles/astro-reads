@@ -8,7 +8,7 @@ feature "User" do
   end
 
   scenario "sees they can but doesn't view additional records" do
-    books = create_list(:book, 2)
+    books = create_list(:book, 3)
 
     visit books_url
 
@@ -17,7 +17,7 @@ feature "User" do
   end
 
   scenario "views a page of additional records" do
-    books = create_list(:book, 2)
+    books = create_list(:book, 3)
 
     visit books_url
     click_link "Load more"

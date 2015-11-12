@@ -7,7 +7,7 @@ module FactoryGirl
       alias_method :original_create_list, :create_list
 
       def create_list(name, amount, *traits_and_overrides, &block)
-        if amount > 2
+        if amount > 3
           raise ArgumentError,
           "You asked to create #{amount} records. Don't do that"
         end

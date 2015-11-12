@@ -1,9 +1,5 @@
 require "rails_helper"
 
-Kaminari.configure do |config|
-  config.default_per_page = 2
-end
-
 feature "Book" do
   describe "is filterable via categories" do
     scenario "is unfiltered" do

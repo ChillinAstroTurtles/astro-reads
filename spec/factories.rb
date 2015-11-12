@@ -9,17 +9,9 @@ FactoryGirl.define do
     sequence(:last_name) { |n| "Lastname#{n}" }
   end
 
-  sequence :name do |n|
-    "name #{n}"
-  end
-
-  sequence :description do |n|
-    "George R.R. Martin's #{n}th book"
-  end
-
   factory :book do
-    name "Ender's Game"
-    description "Orson Scott Card"
+    sequence(:name) { |n| "Name#{n}" }
+    sequence(:description) { |n| "Description#{n}" }
 
     trait :book_with_category do
       after(:create) do |book|
