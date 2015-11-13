@@ -30,8 +30,10 @@ feature "Book" do
 
       visit books_url(:category => category1.name)
 
-      expect(page).to have_content(category1.name)
-      expect(page).not_to have_content(category2.name)
+      within("#books") do
+        expect(page).to have_content(category1.name)
+        expect(page).not_to have_content(category2.name)
+      end
     end
   end
 end
