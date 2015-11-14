@@ -28,7 +28,7 @@ feature "Book" do
                          name: "Elanor and Park",
                          categories: [category2])
 
-      visit books_url(:category => category1.name)
+      visit books_url(category: category1.name)
 
       within("#books") do
         expect(page).to have_content(category1.name)
